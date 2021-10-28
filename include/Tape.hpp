@@ -5,6 +5,8 @@
 
 using namespace std;
 
+const enum dir { LEFT, RIGHT, STOP };
+
 class Tape {
   deque<Symbol> chain;
 
