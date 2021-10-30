@@ -23,7 +23,7 @@ struct Transition {
        << transition.symbolToWrite.toString() << " | ";
 
     switch (transition.moveHead) {
-      case LEFT /* constant-expression */:
+      case LEFT:
         os << "L";
         break;
       case RIGHT:
