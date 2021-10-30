@@ -17,6 +17,7 @@ class Turing {
   State initialState;
   Symbol initialStackSymbol;
   vector<Transition> transitionVector;
+  Symbol blankSymbol;
   Tape tapeIn;
 
   State actualState;

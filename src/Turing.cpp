@@ -2,21 +2,23 @@
 
 Turing::Turing(set<State>& setStates, Alphabet& inAlphabet,
                Alphabet& stackAlphabet, State& initialState,
-               Symbol& initialStackSymbol, vector<Transition>& transitionVector,
+               Symbol& blankSymbol, vector<Transition>& transitionVector,
                Tape& tapeIn) {
   Turing::setStates = setStates;
   Turing::tapeAlphabet = inAlphabet;
   Turing::machineAlphabet = machineAlphabet;
   Turing::initialState = initialState;
   Turing::transitionVector = transitionVector;
+  Turing::blankSymbol = blankSymbol;
   Turing::tapeIn = tapeIn;
 }
 
 bool Turing::run() {
   actualState = initialState;
-  Symbol actualSymbol = tapeIn.read();
   bool doTransition;
   do {
+    Symbol actualSymbol = tapeIn.read();
+    cout << tapeIn << endl;
     doTransition = false;
     for (size_t i = 0; i < transitionVector.size(); i++) {
       if (transitionVector[i].initialState == actualState) {

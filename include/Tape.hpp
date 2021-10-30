@@ -2,10 +2,11 @@
 
 #include <Symbol.hpp>
 #include <deque>
+#include <iostream>
 
 using namespace std;
 
-const enum dir { LEFT, RIGHT, STOP };
+enum dir { LEFT, RIGHT, STOP };
 
 class Tape {
   deque<Symbol> chain;
@@ -26,6 +27,13 @@ class Tape {
   void write(Symbol);
 
   Symbol read(void);
-};
+  friend ostream& operator<<(ostream& os, Tape tape) {
+    for (size_t i = 0; i < tape.chain.size(); i++) {
+      if (tape.pointer + tape.offset == i) os << "[";
+      os << tape.chain[i];
+      if (tape.pointer + tape.offset == i) os << "]";
+    }
 
-ostream& operator<<(ostream& os, Symbol);
+    return os;
+  }
+};

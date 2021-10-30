@@ -14,7 +14,3 @@ bool Symbol::operator<=(Symbol inSymbol) {
 bool Symbol::operator!=(Symbol inSymbol) { return !(*this == inSymbol); }
 
 string Symbol::toString() { return value; }
-
-ostream& operator<<(ostream& os, Symbol outSymbol) {
-  return os << outSymbol.toString();
-}

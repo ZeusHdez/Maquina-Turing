@@ -1,6 +1,9 @@
 #include <Tape.hpp>
 
-Tape::Tape() {}
+Tape::Tape() {
+  pointer = 0;
+  offset = 0;
+}
 
 Tape::Tape(Tape& tapeIn) {
   chain.resize(tapeIn.chain.size());
@@ -24,6 +27,8 @@ void Tape::write(Symbol symbolToWrite) {
   if (pointer < 0) {
     chain.push_front(symbolToWrite);
     offset++;
+  } else if (pointer == chain.size()) {
+    chain.push_back(symbolToWrite);
   } else {
     chain[pointer + offset] = symbolToWrite;
   }

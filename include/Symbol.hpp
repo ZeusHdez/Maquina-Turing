@@ -20,4 +20,7 @@ class Symbol {
   friend bool operator<(const Symbol& symbol1, const Symbol& symbol2) {
     return symbol1.value < symbol2.value;
   }
+  friend ostream& operator<<(ostream& os, Symbol symbol1) {
+    return os << symbol1.value;
+  }
 };
