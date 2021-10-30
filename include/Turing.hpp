@@ -17,6 +17,7 @@ class Turing {
   State initialState;
   Symbol initialStackSymbol;
   vector<Transition> transitionVector;
+  set<State> finalStates;
   Symbol blankSymbol;
   Tape tapeIn;
 
@@ -24,7 +25,7 @@ class Turing {
 
  public:
   Turing(set<State>&, Alphabet&, Alphabet&, State&, Symbol&,
-         vector<Transition>&, Tape&);
+         vector<Transition>&, set<State>&, Tape&);
 
   bool run();
 };
