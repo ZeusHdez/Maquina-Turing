@@ -32,7 +32,7 @@ class Tape {
 
   Symbol read();
   friend ostream& operator<<(ostream& os, Tape tape) {
-    for (size_t i = 0; i < tape.chain.size(); i++) {
+    for (int i = 0; i < (int)tape.chain.size(); i++) {
       if (tape.pointer + tape.offset == i) os << "[";
       os << tape.chain[i];
       if (tape.pointer + tape.offset == i) os << "]";

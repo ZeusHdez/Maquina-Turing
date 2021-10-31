@@ -32,7 +32,7 @@ void Tape::write(Symbol symbolToWrite) {
     chain.push_front(symbolToWrite);
     offset++;
     chain.shrink_to_fit();
-  } else if (pointer + offset == chain.size()) {
+  } else if (pointer + offset == (int)chain.size()) {
     chain.push_back(symbolToWrite);
     chain.shrink_to_fit();
   } else {
@@ -42,7 +42,7 @@ void Tape::write(Symbol symbolToWrite) {
 
 Symbol Tape::read() {
   Symbol returnSymbol;
-  if ((pointer + offset) < chain.size() && (pointer + offset) >= 0)
+  if ((pointer + offset) < (int)chain.size() && (pointer + offset) >= 0)
     returnSymbol = chain[pointer + offset];
   else
     returnSymbol = Symbol(".");

@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
                     estadoInicial, simboloBlanco, vectorTransiciones,
                     conjuntoEstadosFinales, tape);
 
-    cout << ((maquina1.run()) ? "Aceptada" : "Rechazada");
+    cout << ((maquina1.run()) ? "Aceptada" : "Rechazada") << endl;
   } while (cadena != "");
 
   return 0;
