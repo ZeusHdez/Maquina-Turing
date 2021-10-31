@@ -23,6 +23,7 @@ $(TARGET): $(OBJECTS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)  
 	@mkdir -p $(BUILDDIR)
+	@mkdir -p bin
 	@echo " $(CC) $(CFLAGS) -c -o $@ $<" $(INC); $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 run:
