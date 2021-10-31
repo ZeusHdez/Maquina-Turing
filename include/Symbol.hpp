@@ -11,9 +11,11 @@ class Symbol {
   Symbol(string);
 
   Symbol(const Symbol&);
+  ~Symbol() { value.clear(); }
 
   string toString();
 
+  void operator=(Symbol);
   bool operator==(Symbol);
   bool operator<=(const Symbol);
   bool operator!=(Symbol);

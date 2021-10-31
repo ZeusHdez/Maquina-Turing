@@ -6,9 +6,9 @@ CC := g++ # This is the main compiler
 # CC := clang --analyze # and comment out the linker last line for sanity
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/maquinat
+TARGET := bin/maquinat 
 EJEC :=./p2
-RUN :=./bin/maquinat 
+RUN :=./bin/maquinat ./MT01.txt
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))

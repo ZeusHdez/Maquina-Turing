@@ -17,7 +17,9 @@ class Tape {
  public:
   Tape();
   Tape(Tape&);
+  Tape(string);
   Tape(deque<Symbol>&);
+  ~Tape() { chain.clear(); }
   int size();
 
   void left();
@@ -26,7 +28,9 @@ class Tape {
 
   void write(Symbol);
 
-  Symbol read(void);
+  void removeEmpty();
+
+  Symbol read();
   friend ostream& operator<<(ostream& os, Tape tape) {
     for (size_t i = 0; i < tape.chain.size(); i++) {
       if (tape.pointer + tape.offset == i) os << "[";

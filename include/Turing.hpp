@@ -24,8 +24,9 @@ class Turing {
   State actualState;
 
  public:
-  Turing(set<State>&, Alphabet&, Alphabet&, State&, Symbol&,
-         vector<Transition>&, set<State>&, Tape&);
+  Turing(set<State>, Alphabet, Alphabet, State, Symbol, vector<Transition>,
+         set<State>, Tape);
+  ~Turing() {}
 
   bool run();
 };

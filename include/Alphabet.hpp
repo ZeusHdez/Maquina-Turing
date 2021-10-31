@@ -9,6 +9,8 @@ class Alphabet {
 
  public:
   Alphabet();
+  ~Alphabet() { setOfSymbol.clear(); }
+
   void insert(Symbol);
   bool contains(Symbol);
 };

@@ -15,6 +15,7 @@ struct Transition {
   int moveHead;
 
   Transition(State&, Symbol&, State&, Symbol&, int);
+  ~Transition() {}
 
   friend ostream& operator<<(ostream& os, Transition& transition) {
     os << transition.initialState.toString() << " - "

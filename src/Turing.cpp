@@ -1,9 +1,9 @@
 #include <Turing.hpp>
 
-Turing::Turing(set<State>& setStates, Alphabet& inAlphabet,
-               Alphabet& stackAlphabet, State& initialState,
-               Symbol& blankSymbol, vector<Transition>& transitionVector,
-               set<State>& finalStates, Tape& tapeIn) {
+Turing::Turing(set<State> setStates, Alphabet inAlphabet,
+               Alphabet machineAlphabet, State initialState, Symbol blankSymbol,
+               vector<Transition> transitionVector, set<State> finalStates,
+               Tape tapeIn) {
   Turing::setStates = setStates;
   Turing::tapeAlphabet = inAlphabet;
   Turing::machineAlphabet = machineAlphabet;

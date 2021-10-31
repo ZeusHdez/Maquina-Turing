@@ -14,3 +14,5 @@ bool Symbol::operator<=(Symbol inSymbol) {
 bool Symbol::operator!=(Symbol inSymbol) { return !(*this == inSymbol); }
 
 string Symbol::toString() { return value; }
+
+void Symbol::operator=(Symbol statein) { value = statein.value; }

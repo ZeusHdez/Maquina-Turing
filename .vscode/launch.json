@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/bin/maquinat",
-      "args": [],
+      "args": ["${workspaceFolder}/MT01.txt"],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
